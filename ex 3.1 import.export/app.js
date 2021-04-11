@@ -31,8 +31,10 @@
 
 
 
-const add = require('./utils.js')
+const {add,sub, sort} = require('./utils.js')
 
-const sum = add(2,3)
+const sum = add(2,3);
+const minus= sub(2,3);
+const arr = sort([3,5,1,2]);
 
-console.log(sum);
+console.log(sum, minus, arr);
