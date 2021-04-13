@@ -1,0 +1,17 @@
+{"users":[
+  {"id": 0, "name": "Netanel","capsule":5},
+  {"id": 1, "name": "Zehave","capsule":5},
+  {"id": 2, "name": "Mirale","capsule":5},
+  {"id": 3, "name": "David","capsule":5},
+  {"id": 4, "name": "Yanna","capsule":5},
+  {"id": 5, "name": "Foad","capsule":5},
+  {"id":13, "name":"toot", "capsule":5},
+  {"id": 6, "name": "Shir", "capsule": 1},
+  {"id": 7, "name": "Talya", "capsule": 1},
+  {"id": 8, "name": "Gilad", "capsule": 1},
+  {"id": 9, "name": "Guy", "capsule": 1},
+  {"id": 10, "name": "Michael", "capsule": 1},
+  {"id": 11, "name": "Osama", "capsule": 1},
+  {"id": 12, "name": "Eyal Dar", "capsule": 1}
+]
+}
