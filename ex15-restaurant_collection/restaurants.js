@@ -131,14 +131,19 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
   //   }).catch((error) => {
   //     console.log(error)
   //   })
-//////////////////////////////////////////////////////////////////////////////////////////////////
-//1.12 - Delete a specific restaurant
-//  db.collection('restaurants').deleteOne({_id: new ObjectID("607de93444c4970520add7c5")})
-//     .then((result) => {
-//       console.log(result)
-//     }).catch((error) => {
-//       console.log(error)
-//     })
-///////////////////////////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////////////////////////
+  //1.12 - Delete a specific restaurant
+  //  db.collection('restaurants').deleteOne({_id: new ObjectID("607de93444c4970520add7c5")})
+  //     .then((result) => {
+  //       console.log(result)
+  //     }).catch((error) => {
+  //       console.log(error)
+  //     })
+  ///////////////////////////////////////////////////////////////////////////////////////////////
+  //2.2 - Write a MongoDb query to print all restaurant cities
+//   db.collection('restaurants').find().forEach(function (mydoc)
+//    { console.log ("city :"+ mydoc.address.city)
+// })
+
 
 })
