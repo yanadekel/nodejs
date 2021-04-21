@@ -53,6 +53,7 @@ const getProductsByActive = async (req, res) => {
   const isActive = req.query.isActive;
   try {
     const products = await productModel.find({ isActive: isActive });
+    return res.status(200).send(products)
 
   } catch (e) {
     res.status(500).send();
