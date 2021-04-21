@@ -1,7 +1,9 @@
 
 const productModel = require('../models/products.model');
 
+const hila = ()=>{
 
+}
 const createProduct = async (req, res) => {
 
   const { productName, category, isActive, details } = req.body;
@@ -70,9 +72,53 @@ const getProductsByPrice = async (req, res) => {
   } catch (e) {
     res.status(500).send();
   }
- 
+
 }
 
+const updateActiveById = async (req, res) => {
+  const updates = Object.keys(req.body);
+  const alloweUpdates = ["isActive", "discount"];
+  const isValidOpertion = updates.every((update) => alloweUpdates.includes(update));
+
+  if (!isValidOpertion) {
+    return res.status(400).send({ error: 'Invelid updates' })
+  }
+
+  try {
+
+    const product = await productModel.findByIdAndUpdate
+      (req.params.id, { isActive: req.body.isActive, "details.discount": req.body.discount }, { new: true, runValidators: true });
+
+    if (!product) {
+      return res.status(404).send("not such product")
+    }
+    res.status(200).send(product)
+  } catch (e) {
+    res.status(400).send('invelid');
+  }
+
+}
+
+  const deletProductById = async (req, res) => {
+    try {
+      const product = await productModel.findByIdAndDelete(req.params.id);
+      if (!product) {
+        return res.status(404).send("You have been enter unexisting ID");
+      }
+      res.send(product);
+    } catch (error) {
+      res.status(500).send(error);
+    }
+  };
+
+  const deleteAll = async (req, res) => {
+    try {
+      const response = await productModel.deleteMany({});
+      res.send(response);
+    } catch (error) {
+      res.status(500).send(error);
+    }
+  };
 
 
 
@@ -81,5 +127,8 @@ module.exports = {
   getAll: getProducts,
   getproduct: getProductById,
   getActive: getProductsByActive,
-  getRenge: getProductsByPrice
+  getRenge: getProductsByPrice,
+  updateActive: updateActiveById,
+  deleteOne: deletProductById,
+  deleteAll:deleteAll
 }
