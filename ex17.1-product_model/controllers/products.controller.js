@@ -1,9 +1,7 @@
 
 const productModel = require('../models/products.model');
 
-const hila = ()=>{
 
-}
 const createProduct = async (req, res) => {
 
   const { productName, category, isActive, details } = req.body;
